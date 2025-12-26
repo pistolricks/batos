@@ -3,22 +3,18 @@
 # dependencies
 /node_modules
 /.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
+*.pnp.*
 
 # testing
 /coverage
 
-# next.js
-/.next/
-/out/
+# solidstart
+/.output
+/.vinxi
+/.requests
 
 # production
-/build
+/dist
 
 # misc
 .DS_Store
@@ -33,13 +29,8 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
-# vercel
-.vercel
-
 # typescript
 *.tsbuildinfo
-next-env.d.ts
 
 .idea/
-.open-next/
 package-lock.json
