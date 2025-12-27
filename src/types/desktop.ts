@@ -1,6 +1,6 @@
 import { JSX } from 'solid-js'
 
-export interface Window {
+export interface UiWindow {
   id: string
   title: string
   type: 'app' | 'widget' | 'system' | 'terminal' | 'file-manager'
@@ -25,6 +25,9 @@ export interface DesktopApp {
   executable: () => JSX.Element
   defaultSize?: { width: number; height: number }
   defaultPosition?: { x: number; y: number }
+  type?: 'app' | 'widget' | 'system' | 'terminal' | 'file-manager'
+  resizable?: boolean
+  draggable?: boolean
 }
 
 export interface TaskbarItem {
@@ -40,7 +43,7 @@ export interface Notification {
   id: string
   title: string
   message: string
-  type: 'info' | 'success' | 'warning' | 'error'
+  type: 'info' | 'success' | 'warning' | 'error' | string
   timestamp: Date
   duration?: number
   action?: {
@@ -59,7 +62,7 @@ export interface Widget {
 }
 
 export interface DesktopState {
-  windows: Window[]
+  windows: UiWindow[]
   activeWindowId: string | null
   taskbarItems: TaskbarItem[]
   notifications: Notification[]

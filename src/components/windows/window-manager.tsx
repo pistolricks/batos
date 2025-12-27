@@ -1,9 +1,9 @@
 import { For } from 'solid-js'
-import { Window } from '~/types/desktop'
+import { UiWindow } from '~/types/desktop'
 import { WindowComponent } from './window'
 
 interface WindowManagerProps {
-  windows: Window[]
+  windows: UiWindow[]
   onWindowClose: (windowId: string) => void
   onWindowFocus: (windowId: string) => void
   onWindowMinimize: (windowId: string) => void

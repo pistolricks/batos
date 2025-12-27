@@ -24,6 +24,9 @@ import {
   Shield
 } from 'lucide-solid'
 
+import { TerminalApp } from '~/features/apps/terminal-app'
+import { NotepadApp } from '~/features/apps/notepad-app'
+
 interface StartMenuProps {
   isOpen: boolean
   onClose: () => void
@@ -43,83 +46,93 @@ const getIconComponent = (iconName: string): JSX.Element => {
     default: return <Settings size={24} />;
   }
 }
-
+export const applications: DesktopApp[] = [
+  {
+    id: 'alfred',
+    name: 'Alfred',
+    icon: 'user',
+    description: 'AI Assistant & Voice Control',
+    category: 'system',
+    executable: () => <div>Alfred App</div>, // Placeholder
+    defaultSize: { width: 300, height: 400 },
+    defaultPosition: { x: 300, y: 150 }
+  },
+  {
+    id: 'terminal',
+    name: 'Terminal',
+    icon: 'terminal',
+    description: 'Command line interface',
+    category: 'system',
+    executable: () => <TerminalApp />,
+    defaultSize: { width: 800, height: 600 },
+    defaultPosition: { x: 100, y: 100 },
+    type: 'terminal',
+    resizable: true,
+    draggable: true
+  },
+  {
+    id: 'file-manager',
+    name: 'File Manager',
+    icon: 'folder',
+    description: 'Browse files and folders',
+    category: 'system',
+    executable: () => <div>File Manager App</div>,
+    defaultSize: { width: 900, height: 700 },
+    defaultPosition: { x: 150, y: 150 },
+    type: 'file-manager',
+    resizable: true,
+    draggable: true
+  },
+  {
+    id: 'ipod',
+    name: 'Batplayer',
+    icon: 'music',
+    description: 'Retro music player',
+    category: 'entertainment',
+    executable: () => <div>Batplayer App</div>,
+    defaultSize: { width: 240, height: 320 },
+    defaultPosition: { x: 200, y: 200 },
+    resizable: true,
+    draggable: true
+  },
+  {
+    id: 'notepad',
+    name: 'Notepad',
+    icon: 'file-text',
+    description: 'Simple text editor',
+    category: 'utilities',
+    executable: () => <NotepadApp />,
+    defaultSize: { width: 600, height: 400 },
+    defaultPosition: { x: 200, y: 200 },
+    resizable: true,
+    draggable: true
+  },
+  {
+    id: 'system-info',
+    name: 'System Info',
+    icon: 'monitor',
+    description: 'System information and monitoring',
+    category: 'system',
+    executable: () => <div>System Info App</div>,
+    defaultSize: { width: 800, height: 600 },
+    defaultPosition: { x: 250, y: 250 }
+  },
+  {
+    id: 'settings',
+    name: 'Settings',
+    icon: 'settings',
+    description: 'System settings and preferences',
+    category: 'system',
+    executable: () => <div>Settings App</div>,
+    defaultSize: { width: 700, height: 500 },
+    defaultPosition: { x: 300, y: 300 }
+  }
+]
 export function StartMenu(props: StartMenuProps) {
   const { getThemeClass } = useTheme()
   const [searchQuery, setSearchQuery] = createSignal('')
 
-  const applications: DesktopApp[] = [
-    {
-      id: 'alfred',
-      name: 'Alfred',
-      icon: 'user',
-      description: 'AI Assistant & Voice Control',
-      category: 'system',
-      executable: () => <div>Alfred App</div>, // Placeholder
-      defaultSize: { width: 300, height: 400 },
-      defaultPosition: { x: 300, y: 150 }
-    },
-    {
-      id: 'terminal',
-      name: 'Terminal',
-      icon: 'terminal',
-      description: 'Command line interface',
-      category: 'system',
-      executable: () => <div>Terminal App</div>,
-      defaultSize: { width: 800, height: 600 },
-      defaultPosition: { x: 100, y: 100 }
-    },
-    {
-      id: 'file-manager',
-      name: 'File Manager',
-      icon: 'folder',
-      description: 'Browse files and folders',
-      category: 'system',
-      executable: () => <div>File Manager App</div>,
-      defaultSize: { width: 900, height: 700 },
-      defaultPosition: { x: 150, y: 150 }
-    },
-    {
-      id: 'ipod',
-      name: 'Batplayer',
-      icon: 'music',
-      description: 'Retro music player',
-      category: 'entertainment',
-      executable: () => <div>Batplayer App</div>,
-      defaultSize: { width: 240, height: 320 },
-      defaultPosition: { x: 200, y: 200 }
-    },
-    {
-      id: 'notepad',
-      name: 'Notepad',
-      icon: 'file-text',
-      description: 'Simple text editor',
-      category: 'utilities',
-      executable: () => <div>Notepad App</div>,
-      defaultSize: { width: 600, height: 400 },
-      defaultPosition: { x: 200, y: 200 }
-    },
-    {
-      id: 'system-info',
-      name: 'System Info',
-      icon: 'monitor',
-      description: 'System information and monitoring',
-      category: 'system',
-      executable: () => <div>System Info App</div>,
-      defaultSize: { width: 800, height: 600 },
-      defaultPosition: { x: 250, y: 250 }
-    },
-    {
-      id: 'settings',
-      name: 'Settings',
-      icon: 'settings',
-      description: 'System settings and preferences',
-      category: 'system',
-      executable: () => <div>Settings App</div>,
-      defaultSize: { width: 700, height: 500 },
-      defaultPosition: { x: 300, y: 300 }
-    }
-  ]
+
 
   const filteredApps = () => applications.filter(app => 
     app.name.toLowerCase().includes(searchQuery().toLowerCase()) ||

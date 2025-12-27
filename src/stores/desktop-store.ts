@@ -1,5 +1,5 @@
 import { createStore } from "solid-js/store";
-import { DesktopState, Window, DesktopApp } from "~/types/desktop";
+import { DesktopState, UiWindow, DesktopApp } from "~/types/desktop";
 import { generateId } from "../lib/utils";
 
 export function createDesktopStore() {
@@ -87,10 +87,10 @@ export function createDesktopStore() {
       return;
     }
 
-    const newWindow: Window = {
+    const newWindow: UiWindow = {
       id: app.id,
       title: app.name,
-      type: 'app',
+      type: app.type || 'app',
       position: app.defaultPosition || { x: 100, y: 100 },
       size: app.defaultSize || { width: 600, height: 400 },
       isMinimized: false,
@@ -98,7 +98,9 @@ export function createDesktopStore() {
       isFocused: true,
       zIndex: state.windows.length + 10,
       content: app.executable(),
-      icon: app.icon
+      icon: app.icon,
+      resizable: app.resizable ?? true,
+      draggable: app.draggable ?? true
     };
 
     setState("windows", (prev) => [...prev, newWindow]);
@@ -131,12 +133,18 @@ export function createDesktopStore() {
     setState("windows", (w) => w.id === id, "isMaximized", (prev) => !prev);
   };
 
+  const dismissNotification = (id: string) => {
+    setState("notifications", (prev) => prev.filter(n => n.id !== id));
+  };
+
   return {
     state,
+    setState,
     openWindow,
     closeWindow,
     focusWindow,
     toggleMinimize,
-    toggleMaximize
+    toggleMaximize,
+    dismissNotification
   };
 }
