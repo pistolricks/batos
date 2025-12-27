@@ -261,14 +261,17 @@ export function Taskbar(props: TaskbarProps) {
                             <Button
                                 variant="ghost"
                                 class={cn(
-                                    "px-3 relative group transition-all duration-300",
+                                    "px-3 relative group transition-all duration-300 bg-blue-500/20",
                                     item.isActive ? "bg-blue-400/30 text-blue-400" : "text-blue-400/60 hover:text-blue-400 hover:bg-blue-400/10"
                                 )}
                                 onClick={() => props.onItemClick(item)}
                             >
 
-                                <div class="flex space-x-2 items-center">
-                                    <Show when={item.isActive}>
+                                <div class="flex space-x-2 items-center min-w-24 justify-center">
+                                    <Show fallback={ <Circle size={10}
+                                                             class="text-blue-500/60 group-hover:text-blue-500/60 transition-colors"/>
+                                    }
+                                          when={item.isActive}>
 
                                         <Circle size={10}
                                                 class="text-blue-400 group-hover:text-blue-400 transition-colors"/>
