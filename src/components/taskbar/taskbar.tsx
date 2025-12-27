@@ -4,7 +4,7 @@ import {TaskbarItem} from '~/types/desktop'
 import {Button} from '~/components/ui/button'
 import {useTheme} from '~/contexts/theme-context'
 import {useVolume} from '~/contexts/volume-context'
-import {Battery, Search, Volume2, VolumeX, Wifi} from 'lucide-solid'
+import {Battery, Search, Volume2, VolumeX, Wifi, Circle} from 'lucide-solid'
 
 interface TaskbarProps {
     items: TaskbarItem[]
@@ -158,21 +158,25 @@ export function Taskbar(props: TaskbarProps) {
                         <For each={props.items}>
                             {(item) => (
                                 <Button
-                                    variant="ghost"
+                                variant="ghost"
                                     class={cn(
-                                        "h-10 px-3 relative group transition-all duration-300",
-                                        item.isActive ? "bg-blue-400/20 text-blue-400" : "text-blue-400/60 hover:text-blue-400 hover:bg-blue-400/10"
+                                        "px-3 relative group transition-all duration-300",
+                                        item.isActive ? "bg-blue-400/30 text-blue-400" : "text-blue-400/60 hover:text-blue-400 hover:bg-blue-400/10"
                                     )}
                                     onClick={() => props.onItemClick(item)}
                                 >
-                                    <div class="flex items-center space-x-2">
-                                        <span class="text-lg">{item.icon}</span>
+
+                                    <div class="flex space-x-2 items-center">
+                                        <Show when={item.isActive}>
+
+                                            <Circle size={10}
+                                                    class="text-blue-400 group-hover:text-blue-400 transition-colors"/>
+
+
+                                        </Show>
                                         <span class="text-xs font-medium hidden lg:block">{item.title}</span>
                                     </div>
-                                    <Show when={item.isActive}>
-                                        <div
-                                            class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-blue-400 rounded-full shadow-[0_0_8px_rgba(96,165,250,0.8)]"></div>
-                                    </Show>
+
                                 </Button>
                             )}
                         </For>
