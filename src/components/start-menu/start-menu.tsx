@@ -130,7 +130,7 @@ export function StartMenu(props: StartMenuProps) {
     <Show when={props.isOpen}>
       <div 
         class={cn(
-          "absolute bottom-14 left-0 w-125 h-150 rounded-tr-lg shadow-2xl z-50 border-x border-t border-blue-400/30 overflow-hidden flex flex-col transition-all duration-300 animate-in slide-in-from-bottom-5",
+          "absolute bottom-14 left-0 w-full h-full sm:w-125 sm:h-150 rounded-tr-lg shadow-2xl z-50 border-x border-t border-blue-400/30 overflow-hidden flex flex-col transition-all duration-300 animate-in slide-in-from-bottom-5",
           getThemeClass()
         )}
       >

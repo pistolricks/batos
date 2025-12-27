@@ -267,7 +267,7 @@ export function Taskbar(props: TaskbarProps) {
                                 onClick={() => props.onItemClick(item)}
                             >
 
-                                <div class="flex space-x-2 items-center min-w-24 justify-center">
+                                <div class="flex sm:space-x-2 items-center min-w-5 sm:min-w-24 justify-center">
                                     <Show fallback={ <Circle size={10}
                                                              class="text-blue-500/60 group-hover:text-blue-500/60 transition-colors"/>
                                     }
