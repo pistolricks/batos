@@ -22,6 +22,8 @@ import {NotepadApp} from '~/features/apps/notepad-app'
 import Orders from "~/components/orders/orders";
 import Products from "~/components/products/products";
 import Collections from "~/components/collections/collections";
+import Customers from "~/components/customers/customers";
+import Shipping from "~/components/shipping/shipping";
 
 interface StartMenuProps {
     isOpen: boolean
@@ -91,7 +93,7 @@ export const applications: DesktopApp[] = [
         id: 'collections',
         name: 'Collections',
         icon: 'collections',
-        description: 'Product Inventory',
+        description: 'Collections',
         category: 'system',
         executable: () => <Collections />,
         defaultSize: {width: 300, height: 300},
@@ -101,15 +103,28 @@ export const applications: DesktopApp[] = [
         draggable: true
     },
     {
-        id: 'products',
-        name: 'Products',
-        icon: 'products',
-        description: 'Product Inventory',
+        id: 'customers',
+        name: 'Customers',
+        icon: 'customers',
+        description: 'Customers',
         category: 'system',
-        executable: () => <Products />,
+        executable: () => <Customers />,
         defaultSize: {width: 300, height: 300},
         defaultPosition: {x: 20, y: 70},
-        type: 'orders',
+        type: 'customers',
+        resizable: true,
+        draggable: true
+    },
+    {
+        id: 'shipping',
+        name: 'Shipping',
+        icon: 'shipping',
+        description: 'Shipping',
+        category: 'system',
+        executable: () => <Shipping />,
+        defaultSize: {width: 300, height: 300},
+        defaultPosition: {x: 20, y: 70},
+        type: 'shipping',
         resizable: true,
         draggable: true
     },
