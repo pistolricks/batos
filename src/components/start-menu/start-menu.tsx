@@ -209,7 +209,7 @@ export function StartMenu(props: StartMenuProps) {
               </div>
             </div>
             <div>
-              <h2 class="text-[14px] font-bold text-blue-400 tracking-wider uppercase leading-none">{props.username}</h2>
+              <h2 class="text-[14px] font-bold text-blue-400 tracking-wider uppercase leading-4">{props.username}</h2>
               <p class="text-[10px] text-blue-400/60 font-mono mt-1 tracking-tighter uppercase">Administrator Access Granted</p>
             </div>
           </div>

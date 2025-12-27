@@ -218,7 +218,7 @@ export function Taskbar(props: TaskbarProps) {
                             >
                                 <div class="flex flex-col items-end space-y-1">
                                  <span
-                                     class="text-xs font-mono font-bold text-blue-400 leading-none group-hover:text-blue-300 transition-colors">
+                                     class="text-xs font-mono font-bold text-blue-400 leading-4 group-hover:text-blue-300 transition-colors">
                                    {formatTime(props.currentTime())}
                                  </span>
                                     <span class="text-[9px] font-mono text-blue-400/90 leading-none">
