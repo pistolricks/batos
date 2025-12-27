@@ -5,14 +5,10 @@ import "./app.css";
 import {ThemeProvider} from "./contexts/theme-context";
 import {VolumeProvider} from "./contexts/volume-context";
 import {MetaProvider} from "@solidjs/meta";
-import { initFlowbite } from 'flowbite';
+
 
 
 export default function App() {
-
-    onMount(() => {
-        initFlowbite();
-    });
 
     return (
         <Router

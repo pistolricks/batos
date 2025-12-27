@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
+    "outDir": "./lib/cjs/",
     "target": "ESNext",
     "module": "ESNext",
-    "moduleResolution": "Bundler",
+    "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "jsx": "preserve",
@@ -13,6 +14,9 @@
     "skipLibCheck": true,
     "isolatedModules": true,
     "resolveJsonModule": true,
+    "sourceMap": true,
+    "declaration": true,
+    "noImplicitAny": true,
     "types": [
       "vinxi/types/client",
       "vite/client"
@@ -20,12 +24,13 @@
     "lib": [
       "DOM.Iterable",
       "EsNext",
-      "dom"
+      "dom",
+      "es2015"
     ],
     "paths": {
       "~/*": ["./src/*"]
     }
   },
   "include": ["src", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "dist", "lib"]
 }

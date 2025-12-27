@@ -6,6 +6,7 @@ import {useTheme} from '~/contexts/theme-context'
 import {useVolume} from '~/contexts/volume-context'
 import {Battery, Circle, Search, Square, Volume2, VolumeX, Wifi} from 'lucide-solid'
 import {StartMenu} from "~/components/start-menu/start-menu";
+import Modal from "~/components/ui/modal";
 
 interface TaskbarProps {
     items: TaskbarItem[]
@@ -239,6 +240,7 @@ export function Taskbar(props: TaskbarProps) {
                     'box-shadow': '0 2px 20px rgba(59, 130, 246, 0.3), inset 0 1px 0 rgba(59, 130, 246, 0.1)'
                 }}>
                 <div class="flex items-center justify-between h-full w-screen px-4">
+
                     {/* Batman Logo */}
                     <div class="flex items-center space-x-3">
 
