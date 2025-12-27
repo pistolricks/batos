@@ -55,7 +55,7 @@ export function Desktop() {
     })
 
     return (
-        <div class={cn("h-screen w-screen overflow-hidden flex flex-col relative bg-black", getThemeClass())}>
+        <div class={cn("h-screen w-screen overflow-hidden flex flex-col relative bg-background")}>
             {/* Wallpaper / Background */}
             <div class="absolute inset-0 opacity-20">
                 <div class="w-full h-full" style={{
@@ -67,18 +67,7 @@ export function Desktop() {
             </div>
 
             {/* Circuit Pattern Overlay */}
-            <div class="absolute inset-0 opacity-10">
-                <svg class="w-full h-full" viewBox="0 0 100 100" proserve-aspect-ratio="none">
-                    <defs>
-                        <pattern id="circuit" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                            <path d="M0 10 L20 10 M10 0 L10 20" stroke="rgba(59, 130, 246, 0.3)" stroke-width="0.5"
-                                  fill="none"/>
-                            <circle cx="10" cy="10" r="1" fill="rgba(59, 130, 246, 0.5)"/>
-                        </pattern>
-                    </defs>
-                    <rect width="100%" height="100%" fill="url(#circuit)"/>
-                </svg>
-            </div>
+
             <div class="">
 
                 {/* Main Desktop Area */}
@@ -123,6 +112,8 @@ export function Desktop() {
                         notifications={state.notifications}
                         onNotificationDismiss={dismissNotification}
                     />
+
+
 
                     {/* Start Menu */}
                     <StartMenu

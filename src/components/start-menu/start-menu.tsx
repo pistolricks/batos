@@ -3,10 +3,24 @@ import {cn} from '~/lib/utils'
 import {Button} from '~/components/ui/button'
 import {DesktopApp} from '~/types/desktop'
 import {useTheme} from '~/contexts/theme-context'
-import {FileText, Folder, Monitor, Music, Power, Search, Settings, Shield, Terminal, User} from 'lucide-solid'
+import {
+    FileText,
+    Folder,
+    Monitor,
+    Music,
+    Power,
+    Search,
+    Settings,
+    Shield,
+    ShoppingBag,
+    Terminal,
+    User
+} from 'lucide-solid'
 
-import {TerminalApp} from '~/features/apps/terminal-app'
+
 import {NotepadApp} from '~/features/apps/notepad-app'
+import Orders from "~/components/orders/orders";
+import Products from "~/components/products/products";
 
 interface StartMenuProps {
     isOpen: boolean
@@ -17,8 +31,8 @@ interface StartMenuProps {
 
 const getIconComponent = (iconName: string): JSX.Element => {
     switch (iconName) {
-        case 'terminal':
-            return <Terminal size={24}/>;
+        case 'orders':
+            return <ShoppingBag size={24}/>;
         case 'folder':
             return <Folder size={24}/>;
         case 'music':
@@ -47,15 +61,28 @@ export const applications: DesktopApp[] = [
         defaultPosition: {x: 20, y: 70}
     },
     {
-        id: 'terminal',
-        name: 'Terminal',
-        icon: 'terminal',
+        id: 'orders',
+        name: 'Orders',
+        icon: 'orders',
         description: 'Command line interface',
         category: 'system',
-        executable: () => <TerminalApp/>,
+        executable: () => <Orders/>,
         defaultSize: {width: 300, height: 300},
         defaultPosition: {x: 20, y: 70},
-        type: 'terminal',
+        type: 'orders',
+        resizable: true,
+        draggable: true
+    },
+    {
+        id: 'products',
+        name: 'Products',
+        icon: 'products',
+        description: 'Product Inventory',
+        category: 'system',
+        executable: () => <Products />,
+        defaultSize: {width: 300, height: 300},
+        defaultPosition: {x: 20, y: 70},
+        type: 'orders',
         resizable: true,
         draggable: true
     },

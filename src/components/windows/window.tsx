@@ -149,7 +149,7 @@ export function WindowComponent(props: WindowComponentProps) {
         "absolute flex flex-col rounded-lg shadow-2xl transition-all duration-300 pointer-events-auto overflow-hidden",
         props.window.isFocused ? "z-40 scale-x-[1.00005] scale-y-[0.86] md:scale-y-[0.92]" : "z-30 opacity-80 blur-[0.5px]",
         props.window.isMaximized ? "inset-0 w-full! h-full! rounded-none!" : "border border-blue-400/50 shadow-blue-400/20",
-        getThemeClass(),
+
 
       )}
       style={{
@@ -165,14 +165,12 @@ export function WindowComponent(props: WindowComponentProps) {
       <div
         class={cn(
           "h-10 flex items-center justify-between px-3 cursor-default select-none transition-colors",
-          props.window.isFocused ? "bg-blue-400/20" : "bg-blue-400/5"
+          props.window.isFocused ? "bg-black/80" : "bg-blue-400/5"
         )}
         onMouseDown={handleTitleBarMouseDown}
       >
         <div class="flex items-center space-x-2">
-          <Show when={props.window.icon}>
-            <span class="text-sm">{props.window.icon}</span>
-          </Show>
+
           <span class={cn(
             "text-xs font-bold uppercase tracking-wider",
             props.window.isFocused ? "text-blue-400" : "text-blue-400/50"
@@ -210,8 +208,8 @@ export function WindowComponent(props: WindowComponentProps) {
       </div>
 
       {/* Content */}
-      <div class="flex-1 overflow-hidden relative">
-        <Show when={props.window.content} fallback={<div class="w-full h-full bg-black/40 flex items-center justify-center text-blue-400/30 text-xs italic uppercase tracking-widest">Initialization Sequence...</div>}>
+      <div class="flex-1 overflow-hidden relative bg-primary">
+        <Show when={props.window.content} fallback={<div class="w-full h-full  flex items-center justify-center text-blue-400/30 text-xs italic uppercase tracking-widest">Initialization Sequence...</div>}>
           {props.window.content}
         </Show>
       </div>

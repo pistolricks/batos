@@ -94,7 +94,7 @@ export function createDesktopStore() {
       position: app.defaultPosition || { x: 100, y: 100 },
       size: app.defaultSize || { width: 600, height: 400 },
       isMinimized: false,
-      isMaximized: false,
+      isMaximized: true,
       isFocused: true,
       zIndex: state.windows.length + 10,
       content: app.executable(),
