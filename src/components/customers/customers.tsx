@@ -1,4 +1,5 @@
 import {Component} from "solid-js";
+import UpdateCustomer from "~/components/customers/update-customer";
 
 type PROPS = {
 
@@ -7,9 +8,11 @@ type PROPS = {
 const Customers: Component<PROPS> = props => {
 
     return (
+        <>
+            <UpdateCustomer/>
         <section class="bg-background h-screen w-screen antialiased dark:bg-gray-900">
             <div class="mx-auto max-w-7xl">
-                <div class="relative py-4 h-dvh bg-white dark:bg-gray-800  shadow-md  overflow-hidden">
+                <div class="relative py-4 h-dvh bg-background dark:bg-gray-800  shadow-md  overflow-hidden">
                     <div class="px-4 divide-y dark:divide-gray-700">
                         <div
                             class="flex flex-col py-3 space-y-3 md:flex-row md:items-center md:justify-between md:space-y-0 md:space-x-4">
@@ -1271,6 +1274,7 @@ const Customers: Component<PROPS> = props => {
                 </div>
             </div>
         </section>
+            </>
     );
 };
 

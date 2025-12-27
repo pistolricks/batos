@@ -1,11 +1,13 @@
 import {Component} from "solid-js";
+import UpdateProduct from "~/components/products/update-product";
 
 type PROPS = {}
 
 const Products: Component<PROPS> = props => {
 
     return (
-
+        <>
+            <UpdateProduct/>
         <section class="bg-background dark:bg-gray-900 antialiased">
             <div class="mx-auto max-w-screen-2xl">
                 <div class="relative py-4 h-screen bg-white dark:bg-gray-800 shadow-md">
@@ -697,7 +699,7 @@ const Products: Component<PROPS> = props => {
                 </div>
             </div>
         </section>
-
+            </>
     );
 };
 
