@@ -5,6 +5,7 @@ import {Button} from '~/components/ui/button'
 import {useTheme} from '~/contexts/theme-context'
 import {useVolume} from '~/contexts/volume-context'
 import {Battery, Circle, Search, Square, Volume2, VolumeX, Wifi} from 'lucide-solid'
+import {StartMenu} from "~/components/start-menu/start-menu";
 
 interface TaskbarProps {
     items: TaskbarItem[]
@@ -230,6 +231,8 @@ export function Taskbar(props: TaskbarProps) {
                     </div>
                 </div>
             </div>
+
+
             <div
                 class={`fixed bottom-0 left-0 right-0 h-14 ${getThemeClass()} backdrop-blur-md flex items-center border-t-2 border-blue-400/50 z-50`}
                 style={{
