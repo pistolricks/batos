@@ -50,7 +50,7 @@ export function Desktop() {
             <div class="">
 
                 {/* Main Desktop Area */}
-                <div class="relative z-10 w-full h-full">
+                <div class="relative z-10 w-screen h-screen">
 
 
                     {/* Desktop Icons could go here */}

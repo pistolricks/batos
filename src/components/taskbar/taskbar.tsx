@@ -1,21 +1,10 @@
-import {createSignal, onMount, onCleanup, For, Show} from 'solid-js'
-import {cn} from '~/lib/utils'
+import {createSignal, For, Show} from 'solid-js'
+import {cn, formatTime} from '~/lib/utils'
 import {TaskbarItem} from '~/types/desktop'
 import {Button} from '~/components/ui/button'
 import {useTheme} from '~/contexts/theme-context'
 import {useVolume} from '~/contexts/volume-context'
-import {
-    Play,
-    Clock,
-    Wifi,
-    Volume2,
-    VolumeX,
-    Battery,
-    ChevronDown,
-    Settings,
-    Search
-} from 'lucide-solid'
-import {formatTime} from '~/lib/utils'
+import {Battery, Search, Volume2, VolumeX, Wifi} from 'lucide-solid'
 
 interface TaskbarProps {
     items: TaskbarItem[]
@@ -97,7 +86,7 @@ export function Taskbar(props: TaskbarProps) {
             style={{
                 'box-shadow': '0 2px 20px rgba(59, 130, 246, 0.3), inset 0 1px 0 rgba(59, 130, 246, 0.1)'
             }}>
-            <div class="flex items-center justify-between h-full px-4">
+            <div class="flex items-center justify-between h-full w-screen px-4">
                 {/* Batman Logo */}
                 <div class="flex items-center space-x-3">
 
@@ -120,8 +109,10 @@ export function Taskbar(props: TaskbarProps) {
                     <div class="h-8 w-px bg-linear-to-b from-blue-400/50 to-transparent"></div>
                 </div>
 
-                    {/* Search Bar */}
-                    <div class="relative ml-2 hidden md:block">
+                {/* Search Bar */}
+
+                <div class={"flex justify-end items-center"}>
+                    <div class="">
                         <div
                             class="flex items-center bg-blue-400/10 border border-blue-400/30 rounded-full px-3 py-1 w-64 focus-within:border-blue-400/60 focus-within:bg-blue-400/20 transition-all duration-300">
                             <Search size={14} class="text-blue-400/60 mr-2"/>
@@ -160,7 +151,7 @@ export function Taskbar(props: TaskbarProps) {
                             </div>
                         </Show>
 
-
+                    </div>
                     <div class="h-6 w-px bg-blue-400/20 mx-2"></div>
 
                     <div class="flex items-center space-x-1">
@@ -186,13 +177,13 @@ export function Taskbar(props: TaskbarProps) {
                             )}
                         </For>
                     </div>
-                </div>
 
-                <div class="flex items-center space-x-3">
+
                     {/* System Tray Icons */}
-                    <div class="flex items-center space-x-2 mr-2 hidden sm:flex">
-                        <Wifi size={14} class="text-blue-400/60 hover:text-blue-400 transition-colors cursor-pointer"/>
-                        <Battery size={14}
+                    <div class="h-6 w-px bg-blue-400/30 mx-2"></div>
+                    <div class="items-center space-x-4 ml-2 hidden sm:flex">
+                        <Wifi size={20} class="text-blue-400/60 hover:text-blue-400 transition-colors cursor-pointer"/>
+                        <Battery size={20}
                                  class="text-blue-400/60 hover:text-blue-400 transition-colors cursor-pointer"/>
 
                         <div class="relative" ref={volumeRef}>
@@ -202,7 +193,7 @@ export function Taskbar(props: TaskbarProps) {
                             >
                                 <Show when={isMuted() || volume() === 0} fallback={<Volume2 size={14}
                                                                                             class="text-blue-400/60 group-hover:text-blue-400 transition-colors"/>}>
-                                    <VolumeX size={14}
+                                    <VolumeX size={20}
                                              class="text-red-400/60 group-hover:text-red-400 transition-colors"/>
                                 </Show>
                             </div>
@@ -234,36 +225,28 @@ export function Taskbar(props: TaskbarProps) {
                                 </div>
                             </Show>
                         </div>
+
+
+                        <div class="h-6 w-px bg-blue-400/30 mx-2"></div>
+
+                        <Button
+                            variant="ghost"
+                            class="flex items-center space-x-2 px-2 h-10 hover:bg-blue-400/10 transition-all duration-300 group"
+                            onClick={() => props.onSystemMenuToggle?.()}
+                        >
+                            <div class="flex flex-col items-end space-y-1">
+                                 <span
+                                     class="text-xs font-mono font-bold text-blue-400 leading-none group-hover:text-blue-300 transition-colors">
+                                   {formatTime(props.currentTime())}
+                                 </span>
+                                <span class="text-[9px] font-mono text-blue-400/90 leading-none">
+                                   {props.currentTime().toLocaleDateString('en-US', {month: 'short', day: 'numeric'})}
+                                 </span>
+                            </div>
+                        </Button>
                     </div>
-
-                    <div class="h-6 w-px bg-blue-400/20"></div>
-
-                    <Button
-                        variant="ghost"
-                        class="flex items-center space-x-2 px-2 h-10 hover:bg-blue-400/10 transition-all duration-300 group"
-                        onClick={() => props.onSystemMenuToggle?.()}
-                    >
-                        <div class="flex flex-col items-end">
-            <span
-                class="text-xs font-mono font-bold text-blue-400 leading-none group-hover:text-blue-300 transition-colors">
-              {formatTime(props.currentTime())}
-            </span>
-                            <span class="text-[9px] font-mono text-blue-400/60 leading-none mt-1">
-              {props.currentTime().toLocaleDateString('en-US', {month: 'short', day: 'numeric'})}
-            </span>
-                        </div>
-                        <Clock size={16} class="text-blue-400 group-hover:animate-pulse"/>
-                    </Button>
-
-                    <div
-                        class="w-1.5 h-full hover:bg-blue-400/20 cursor-pointer transition-colors border-l border-blue-400/10"
-                        onClick={() => {/* Show Desktop logic */
-                        }}
-                        title="Show Desktop"
-                    ></div>
                 </div>
             </div>
-
         </div>
     )
 }
