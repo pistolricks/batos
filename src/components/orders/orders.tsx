@@ -9,7 +9,7 @@ export default function Orders() {
                     <div class="space-y-6 sm:space-y-8">
 
 
-                        <div class="relative h-dvh divide-y divide-gray-200 overflow-hidden  border border-gray-200 bg-gray-50 shadow-sm dark:divide-gray-700 dark:border-gray-700 dark:bg-gray-800">
+                        <div class="relative py-4 h-dvh divide-y divide-gray-200 overflow-hidden  border border-gray-200 bg-gray-50 shadow-sm dark:divide-gray-700 dark:border-gray-700 dark:bg-gray-800">
                             <div class="space-y-4 p-4">
                                 <div class="flex flex-col-reverse items-center justify-between md:flex-row md:space-x-4">
                                     <form class="w-full flex-1 md:mr-4 md:max-w-md">
@@ -629,44 +629,7 @@ export default function Orders() {
                                 </table>
                             </div>
 
-                            <div class="absolute bottom-14 inset-x-0 px-4 py-4">
-                                <nav class="flex flex-col items-start justify-between space-y-3 md:flex-row md:items-center md:space-y-0" aria-label="Table navigation">
-                                    <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Showing <span class="font-semibold text-gray-900 dark:text-white">1-10</span> of <span class="font-semibold text-gray-900 dark:text-white">1000</span></span>
-                                    <ul class="flex h-8 items-center -space-x-px text-sm">
-                                        <li>
-                                            <a href="#" class="ms-0 flex h-8 items-center justify-center rounded-s-lg border border-e-0 border-gray-300 bg-gray-50 px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                                                <span class="sr-only">Previous</span>
-                                                <svg class="h-4 w-4 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7" />
-                                                </svg>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="flex h-8 items-center justify-center border border-gray-300 bg-gray-50 px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="flex h-8 items-center justify-center border border-gray-300 bg-gray-50 px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" aria-current="page" class="z-10 flex h-8 items-center justify-center border border-primary-300 bg-primary-50 px-3 leading-tight text-primary-600 hover:bg-primary-100 hover:text-primary-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="flex h-8 items-center justify-center border border-gray-300 bg-gray-50 px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">...</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="flex h-8 items-center justify-center border border-gray-300 bg-gray-50 px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">100</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="flex h-8 items-center justify-center rounded-e-lg border border-gray-300 bg-gray-50 px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                                                <span class="sr-only">Next</span>
-                                                <svg class="h-4 w-4 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7" />
-                                                </svg>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
+
                         </div>
                     </div>
                 </div>

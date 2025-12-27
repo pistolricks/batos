@@ -3,7 +3,7 @@ import { JSX } from 'solid-js'
 export interface UiWindow {
   id: string
   title: string
-  type: 'app' | 'widget' | 'system' | 'terminal' | 'products' | 'orders' | 'file-manager'
+  type: 'app' | 'widget' | 'system' | 'terminal' | 'products' | 'collections' | 'customers' | 'orders' | 'file-manager'
   position: { x: number; y: number }
   size: { width: number; height: number }
   isMinimized: boolean
@@ -25,7 +25,7 @@ export interface DesktopApp {
   executable: () => JSX.Element
   defaultSize?: { width: number; height: number }
   defaultPosition?: { x: number; y: number }
-  type?:  'app' | 'widget' | 'system' | 'terminal' | 'products' | 'orders' | 'file-manager'
+  type?:  'app' | 'widget' | 'system' | 'terminal' | 'products' | 'collections' | 'customers' | 'orders' | 'file-manager'
   resizable?: boolean
   draggable?: boolean
 }
