@@ -86,6 +86,7 @@ export function Desktop() {
                     />
                     {/* Start Menu */}
                     <StartMenu
+                        username={"Erik Smith"}
                         isOpen={isStartMenuOpen()}
                         onClose={() => setIsStartMenuOpen(false)}
                         onAppLaunch={openWindow}

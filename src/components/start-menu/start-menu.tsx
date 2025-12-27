@@ -28,6 +28,7 @@ interface StartMenuProps {
   isOpen: boolean
   onClose: () => void
   onAppLaunch: (app: DesktopApp) => void
+  username: string
 }
 
 const getIconComponent = (iconName: string): JSX.Element => {
@@ -129,27 +130,12 @@ export function StartMenu(props: StartMenuProps) {
     <Show when={props.isOpen}>
       <div 
         class={cn(
-          "absolute bottom-14 left-2 w-125 h-150 rounded-lg shadow-2xl z-50 border border-blue-400/30 overflow-hidden flex flex-col transition-all duration-300 animate-in slide-in-from-bottom-5",
+          "absolute bottom-14 left-0 w-125 h-150 rounded-tr-lg shadow-2xl z-50 border-x border-t border-blue-400/30 overflow-hidden flex flex-col transition-all duration-300 animate-in slide-in-from-bottom-5",
           getThemeClass()
         )}
       >
         {/* Header */}
-        <div class="p-6 bg-blue-400/10 border-b border-blue-400/20 flex items-center justify-between">
-          <div class="flex items-center space-x-4">
-            <div class="w-12 h-12 rounded-full border-2 border-blue-400 p-0.5 shadow-[0_0_15px_rgba(96,165,250,0.5)]">
-              <div class="w-full h-full rounded-full bg-blue-900 flex items-center justify-center text-blue-400">
-                <User size={24} />
-              </div>
-            </div>
-            <div>
-              <h2 class="text-lg font-bold text-blue-400 tracking-wider uppercase leading-none">Bruce Wayne</h2>
-              <p class="text-[10px] text-blue-400/60 font-mono mt-1 tracking-tighter uppercase">Administrator Access Granted</p>
-            </div>
-          </div>
-          <Button variant="ghost" size="icon" class="text-red-400 hover:bg-red-400/10 rounded-full" onClick={() => props.onClose()}>
-            <Power size={20} />
-          </Button>
-        </div>
+
 
         {/* Search */}
         <div class="p-4 border-b border-blue-400/10">
@@ -202,7 +188,22 @@ export function StartMenu(props: StartMenuProps) {
             </div>
           </div>
         </div>
-
+        <div class="pl-4 pr-3 py-2 bg-blue-400/10 border-y border-blue-400/20 flex items-center justify-between">
+          <div class="flex items-center space-x-4">
+            <div class="size-8 rounded-full border-2 border-blue-400 p-0.5 shadow-[0_0_15px_rgba(96,165,250,0.5)]">
+              <div class="w-full h-full rounded-full bg-blue-900 flex items-center justify-center text-blue-400">
+                <User size={24} />
+              </div>
+            </div>
+            <div>
+              <h2 class="text-[14px] font-bold text-blue-400 tracking-wider uppercase leading-none">{props.username}</h2>
+              <p class="text-[10px] text-blue-400/60 font-mono mt-1 tracking-tighter uppercase">Administrator Access Granted</p>
+            </div>
+          </div>
+          <Button variant="ghost" size="icon" class="text-red-400 hover:bg-red-400/10 rounded-full" onClick={() => props.onClose()}>
+            <Power size={20} />
+          </Button>
+        </div>
         {/* Footer */}
         <div class="p-3 bg-blue-400/5 border-t border-blue-400/10 flex items-center justify-between px-6">
           <div class="flex items-center space-x-2">
