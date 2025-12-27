@@ -3,13 +3,13 @@
 export default function Orders() {
 
     return (
-        <section class="bg-background py-8 antialiased dark:bg-gray-900 md:py-8">
-            <div class="mx-auto max-w-7xl px-4 2xl:px-0">
-                <div class="mx-auto max-w-5xl">
+        <section class="bg-background h-screen w-screen antialiased dark:bg-gray-900">
+            <div class="mx-auto max-w-7xl ">
+                <div class="">
                     <div class="space-y-6 sm:space-y-8">
 
 
-                        <div class="relative h-[90dvh] divide-y divide-gray-200 overflow-hidden rounded-lg border border-gray-200 bg-gray-50 shadow-sm dark:divide-gray-700 dark:border-gray-700 dark:bg-gray-800">
+                        <div class="relative h-dvh divide-y divide-gray-200 overflow-hidden  border border-gray-200 bg-gray-50 shadow-sm dark:divide-gray-700 dark:border-gray-700 dark:bg-gray-800">
                             <div class="space-y-4 p-4">
                                 <div class="flex flex-col-reverse items-center justify-between md:flex-row md:space-x-4">
                                     <form class="w-full flex-1 md:mr-4 md:max-w-md">
@@ -21,7 +21,7 @@ export default function Orders() {
                                                 </svg>
                                             </div>
                                             <input type="search" id="default-search" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 pl-10 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500" placeholder="Search by Order ID"  />
-                                            <button type="submit" class="absolute bottom-0 right-0 top-0 rounded-r-lg bg-primary-700 px-4 py-2 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Search</button>
+                                            <button type="submit" class="absolute bottom-0 right-0 top-0 rounded-r-lg bg-primary-700  py-2 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Search</button>
                                         </div>
                                     </form>
 
@@ -629,7 +629,7 @@ export default function Orders() {
                                 </table>
                             </div>
 
-                            <div class="absolute bottom-0 inset-x-0 px-4 py-4">
+                            <div class="absolute bottom-14 inset-x-0 px-4 py-4">
                                 <nav class="flex flex-col items-start justify-between space-y-3 md:flex-row md:items-center md:space-y-0" aria-label="Table navigation">
                                     <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Showing <span class="font-semibold text-gray-900 dark:text-white">1-10</span> of <span class="font-semibold text-gray-900 dark:text-white">1000</span></span>
                                     <ul class="flex h-8 items-center -space-x-px text-sm">
