@@ -23,7 +23,7 @@ import Orders from "~/components/orders/orders";
 import Products from "~/components/products/products";
 import Collections from "~/components/collections/collections";
 import Customers from "~/components/customers/customers";
-import Shipping from "~/components/shipping/shipping";
+import Shipments from "~/components/shipments/shipments";
 
 interface StartMenuProps {
     isOpen: boolean
@@ -121,7 +121,7 @@ export const applications: DesktopApp[] = [
         icon: 'shipping',
         description: 'Shipping',
         category: 'system',
-        executable: () => <Shipping />,
+        executable: () => <Shipments />,
         defaultSize: {width: 300, height: 300},
         defaultPosition: {x: 20, y: 70},
         type: 'shipping',

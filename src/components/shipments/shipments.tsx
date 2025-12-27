@@ -1,10 +1,12 @@
 import {Component} from "solid-js";
+import Shipment from "~/components/shipments/shipment";
 
 type PROPS = {}
 
-const Shipping: Component<PROPS> = props => {
+const Shipments: Component<PROPS> = props => {
 
     return (
+        <>
         <section class="bg-background h-screen w-screen antialiased dark:bg-gray-900">
             <div class="mx-auto max-w-7xl">
                 <div
@@ -906,7 +908,9 @@ const Shipping: Component<PROPS> = props => {
                 </div>
             </div>
         </section>
+            <Shipment />
+            </>
     );
 };
 
-export default Shipping;
+export default Shipments;
