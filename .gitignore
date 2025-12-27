@@ -34,3 +34,5 @@ yarn-error.log*
 
 .idea/
 package-lock.json
+.next/
+.open-next/
