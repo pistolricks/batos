@@ -147,10 +147,10 @@ export function WindowComponent(props: WindowComponentProps) {
       ref={windowRef}
       class={cn(
         "absolute flex flex-col rounded-lg shadow-2xl transition-all duration-300 pointer-events-auto overflow-hidden",
-        props.window.isFocused ? "z-[40] scale-x-[1.00005] scale-y-[0.91]" : "z-[30] opacity-80 blur-[0.5px]",
-        props.window.isMaximized ? "inset-0 !w-full !h-full !rounded-none" : "",
+        props.window.isFocused ? "z-40 scale-x-[1.00005] scale-y-[0.86] md:scale-y-[0.92]" : "z-30 opacity-80 blur-[0.5px]",
+        props.window.isMaximized ? "inset-0 w-full! h-full! rounded-none!" : "border border-blue-400/50 shadow-blue-400/20",
         getThemeClass(),
-        "border border-blue-400/50 shadow-blue-400/20"
+
       )}
       style={{
         left: props.window.isMaximized ? '0' : `${props.window.position.x}px`,
